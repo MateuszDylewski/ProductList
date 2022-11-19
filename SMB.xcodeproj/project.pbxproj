@@ -7,18 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2162EE6291C4C870097E55D /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2162EE5291C4C870097E55D /* ProductStore.swift */; };
+		E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2607D792922EF4E0032DE45 /* SettingsView.swift */; };
+		E2650E49291C4DAB007D365D /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E2650E48291C4DAB007D365D /* SQLite */; };
+		E2650E4D291D95D3007D365D /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E4C291D95D3007D365D /* ProductService.swift */; };
+		E2650E51291D9A73007D365D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E50291D9A73007D365D /* HomeView.swift */; };
+		E2650E53291DBB95007D365D /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E52291DBB95007D365D /* AddProductView.swift */; };
 		E2786513291826CE00CA6849 /* SMBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2786512291826CE00CA6849 /* SMBApp.swift */; };
-		E2786515291826CE00CA6849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2786514291826CE00CA6849 /* ContentView.swift */; };
+		E2786515291826CE00CA6849 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2786514291826CE00CA6849 /* ListView.swift */; };
 		E2786517291826CF00CA6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786516291826CF00CA6849 /* Assets.xcassets */; };
 		E278651A291826CF00CA6849 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786519291826CF00CA6849 /* Preview Assets.xcassets */; };
+		E27865232918295600CA6849 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27865222918295600CA6849 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E2162EE5291C4C870097E55D /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		E2607D792922EF4E0032DE45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E2650E4C291D95D3007D365D /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		E2650E50291D9A73007D365D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E2650E52291DBB95007D365D /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		E278650F291826CE00CA6849 /* SMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2786512291826CE00CA6849 /* SMBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBApp.swift; sourceTree = "<group>"; };
-		E2786514291826CE00CA6849 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E2786514291826CE00CA6849 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E2786516291826CF00CA6849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2786519291826CF00CA6849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E27865222918295600CA6849 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +39,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2650E49291C4DAB007D365D /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2650E4E291D9A1E007D365D /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				E2650E52291DBB95007D365D /* AddProductView.swift */,
+				E2650E4C291D95D3007D365D /* ProductService.swift */,
+				E27865222918295600CA6849 /* Product.swift */,
+				E2162EE5291C4C870097E55D /* ProductStore.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		E2650E4F291D9A49007D365D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2786514291826CE00CA6849 /* ListView.swift */,
+				E2650E50291D9A73007D365D /* HomeView.swift */,
+				E2607D792922EF4E0032DE45 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E2786506291826CE00CA6849 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +86,9 @@
 		E2786511291826CE00CA6849 /* SMB */ = {
 			isa = PBXGroup;
 			children = (
+				E2650E4F291D9A49007D365D /* View */,
+				E2650E4E291D9A1E007D365D /* Product */,
 				E2786512291826CE00CA6849 /* SMBApp.swift */,
-				E2786514291826CE00CA6849 /* ContentView.swift */,
 				E2786516291826CF00CA6849 /* Assets.xcassets */,
 				E2786518291826CF00CA6849 /* Preview Content */,
 			);
@@ -83,6 +119,9 @@
 			dependencies = (
 			);
 			name = SMB;
+			packageProductDependencies = (
+				E2650E48291C4DAB007D365D /* SQLite */,
+			);
 			productName = SMB;
 			productReference = E278650F291826CE00CA6849 /* SMB.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +150,9 @@
 				Base,
 			);
 			mainGroup = E2786506291826CE00CA6849;
+			packageReferences = (
+				E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = E2786510291826CE00CA6849 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2786515291826CE00CA6849 /* ContentView.swift in Sources */,
+				E2786515291826CE00CA6849 /* ListView.swift in Sources */,
+				E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */,
+				E2650E4D291D95D3007D365D /* ProductService.swift in Sources */,
+				E2650E53291DBB95007D365D /* AddProductView.swift in Sources */,
 				E2786513291826CE00CA6849 /* SMBApp.swift in Sources */,
+				E2650E51291D9A73007D365D /* HomeView.swift in Sources */,
+				E27865232918295600CA6849 /* Product.swift in Sources */,
+				E2162EE6291C4C870097E55D /* ProductStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +321,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,8 +349,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2650E48291C4DAB007D365D /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E2786507291826CE00CA6849 /* Project object */;
 }
