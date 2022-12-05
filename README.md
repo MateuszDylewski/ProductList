@@ -1,4 +1,4 @@
-# SMB
+# Shopping List - SMB mini project 1
 Mobile application created for SMB school subject.
 
 Main module of the application is a shopping list.
