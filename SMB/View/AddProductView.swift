@@ -7,15 +7,33 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct AddProductView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @ObservedObject var productService: ProductService
-    @State private var name: String = ""
-    @State private var quantity: Int64 = 0
-    @State private var price: Double = 0.0
-    @AppStorage("displayQuantity") private var displayQuantity = true
-    @AppStorage("displayPrice") private var displayPrice = true
+    
+    @Environment(\.presentationMode)
+    var presentationMode: Binding<PresentationMode>
+    
+    @ObservedObject
+    var productService: ProductService
+    
+    @State
+    private var name: String = ""
+    
+    @State
+    private var quantity: Int64 = 0
+    
+    @State
+    private var price: Double = 0.0
+    
+    @State
+    private var isPrivate: Bool = false
+    
+    @AppStorage("displayQuantity")
+    private var displayQuantity = true
+    
+    @AppStorage("displayPrice")
+    private var displayPrice = true
     
     var body: some View {
         Form {
@@ -29,11 +47,19 @@ struct AddProductView: View {
                 TextField("", value: $price, formatter: amountFormatter)
                     .keyboardType(.decimalPad)
             }
+            Toggle("Private product", isOn: $isPrivate)
         }
         .navigationTitle("Add product")
         .toolbar {
             Button {
-                productService.insert(product: ProductModel(id: 0, name: self.name, price: self.price, quantity: self.quantity, ifBought: false))
+                productService.insert(product: ProductModel(
+                    id: "",
+                    name: self.name,
+                    price: self.price,
+                    quantity: self.quantity,
+                    ifBought: false,
+                    userOwnerId: isPrivate ? Auth.auth().currentUser!.uid : ""
+                ))
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Save")

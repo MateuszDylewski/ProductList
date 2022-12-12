@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct SMBApp: App {
+    
+    @ObservedObject var authService: AuthService = AuthService()
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            if authService.userIsLoggedIn {
+                HomeView(authService: self.authService)
+            } else {
+                AuthView(authService: self.authService)
+            }
         }
     }
 }

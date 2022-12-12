@@ -11,6 +11,7 @@ import SwiftUI
 struct HomeView: View {
     
     private let adaptiveColumns = [GridItem(.adaptive(minimum: 180))]
+    @ObservedObject var authService: AuthService
     
     var body: some View {
         NavigationView {
@@ -47,11 +48,5 @@ struct NaviagtionButton: View {
         .background(color)
         .foregroundColor(.white)
         .cornerRadius(20)
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }

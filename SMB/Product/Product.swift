@@ -7,17 +7,28 @@
 
 import SwiftUI
 
-struct ProductModel : Identifiable {
-    var id: Int64
+struct ProductModel : Identifiable, Encodable, Decodable {
+    var id: String
     var name: String
     var price: Double
     var quantity: Int64
     var ifBought: Bool
+    var userOwnerId: String
+}
+
+extension Encodable {
+    var toDictionary: [String: Any]? {
+        guard let data = try? JSONEncoder().encode(self) else {
+            return nil
+        }
+        
+        return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+    }
 }
 
 struct ProductRow: View {
     @Environment(\.editMode) private var editMode
-    @State var product: ProductModel
+    @Binding var product: ProductModel
     @ObservedObject var productService: ProductService
     @AppStorage("currencie") private var currencie = "zł"
     @AppStorage("displayQuantity") private var displayQuantity = true
@@ -40,9 +51,6 @@ struct ProductRow: View {
                     }
                 }
             }
-            .onDisappear {
-                productService.updateById(updatedProduct: product)
-            }
         } else {
             HStack {
                 Text(product.name)
@@ -52,25 +60,16 @@ struct ProductRow: View {
                 }
                 Spacer()
                 if displayPrice {
-                    Text(String(product.price) +  currencie)
+                    Text(String(product.price) + currencie)
                         .padding(.trailing, 10)
                 }
-                if editMode?.wrappedValue.isEditing == true {
-                    
-                } else {
-                    Button {
-                        product.ifBought.toggle()
-                    } label: {
-                        if product.ifBought {
-                            Image(systemName: "checkmark.circle")
-                        } else {
-                            Image(systemName: "circle")
-                        }
-                    }
+                
+                Image(systemName: product.ifBought ? "checkmark.circle" : "circle")
+                .foregroundColor(product.ifBought ? .green : .accentColor)
+                .onTapGesture {
+                    product.ifBought.toggle()
+                    productService.updateById(updatedProduct: product)
                 }
-            }
-            .onDisappear {
-                productService.updateById(updatedProduct: product)
             }
         }
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct SettingsView: View {
     @AppStorage("currencie") private var currencie = "zł"
@@ -25,6 +26,17 @@ struct SettingsView: View {
                 Toggle(isOn: $displayPrice, label: {
                     Text("Price")
                 })
+            })
+            Section("Account", content: {
+                Button {
+                    do {
+                        try Auth.auth().signOut()
+                    } catch {
+                        print("Cannot sign out user: \(error)")
+                    }
+                } label: {
+                    Text("Sign out")
+                }
             })
         }
         .navigationTitle("Settings")

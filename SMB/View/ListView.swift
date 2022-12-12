@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ListView: View {
-    @ObservedObject var productService: ProductService
-    @Environment(\.editMode) private var editMode
+    
+    @StateObject
+    var productService: ProductService
+    
+    @Environment(\.editMode)
+    private var editMode
+    
+    @AppStorage("privateSwitch")
+    private var privateSwitch: Bool = true
     
     var body: some View {
         VStack {
             List {
-                ForEach(productService.productsList, id: \.id) { product in
+                ForEach($productService.productList, id: \.id) { product in
                     ProductRow(product: product, productService: productService)
                 }
                 .onDelete(perform: productService.deleteById(at:))
@@ -22,27 +29,48 @@ struct ListView: View {
             .listStyle(.plain)
             .font(.system(size:20))
             .onAppear {
-                productService.getAll()
+                productService.getProducts(privateSwitch)
             }
             
             Spacer()
             
         }
         .ignoresSafeArea(.all,  edges: .bottom)
-        .navigationTitle("\(productService.productsList.count) Items")
-        .toolbar{
-            if editMode?.wrappedValue.isEditing == true {
+        .navigationTitle(privateSwitch ? "Private products" : "Private and public products")
+        .navigationBarBackButtonHidden(editMode?.wrappedValue.isEditing == true ? true : false)
+        .toolbar {
+            editButton
+            if (editMode?.wrappedValue.isEditing == true) {
+                privateViewSwitch
                 NavigationLink(destination: AddProductView(productService: productService), label: {
                     Text("Add")
                 })
             }
-            EditButton()
         }
     }
-}
-
-struct Listy_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+    
+    var editButton: some View {
+        Button {
+            if (editMode?.wrappedValue.isEditing == true) {
+                editMode?.wrappedValue = .inactive
+            } else {
+                editMode?.wrappedValue = .active
+            }
+        } label: {
+            if (editMode?.wrappedValue.isEditing == true) {
+                Text("Done")
+            } else {
+                Text("Edit")
+            }
+        }
+    }
+    
+    var privateViewSwitch : some View {
+        Button {
+            privateSwitch.toggle()
+            productService.getProducts(privateSwitch)
+        } label: {
+            Text("Switch Mode")
+        }
     }
 }

@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E2162EE6291C4C870097E55D /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2162EE5291C4C870097E55D /* ProductStore.swift */; };
+		E22DBBF12942628F00E38AE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E22DBBF02942628F00E38AE1 /* GoogleService-Info.plist */; };
 		E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2607D792922EF4E0032DE45 /* SettingsView.swift */; };
 		E2650E49291C4DAB007D365D /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E2650E48291C4DAB007D365D /* SQLite */; };
 		E2650E4D291D95D3007D365D /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E4C291D95D3007D365D /* ProductService.swift */; };
 		E2650E51291D9A73007D365D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E50291D9A73007D365D /* HomeView.swift */; };
 		E2650E53291DBB95007D365D /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E52291DBB95007D365D /* AddProductView.swift */; };
+		E26B658E29410E7D008F8C7A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B658D29410E7D008F8C7A /* AuthService.swift */; };
+		E26B659129411563008F8C7A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E26B659029411563008F8C7A /* FirebaseAuth */; };
+		E26B6595294115AA008F8C7A /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26B6594294115AA008F8C7A /* AuthView.swift */; };
+		E26B659A294118F6008F8C7A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E26B6599294118F6008F8C7A /* FirebaseDatabase */; };
+		E26B659C294118F6008F8C7A /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E26B659B294118F6008F8C7A /* FirebaseDatabaseSwift */; };
 		E2786513291826CE00CA6849 /* SMBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2786512291826CE00CA6849 /* SMBApp.swift */; };
 		E2786515291826CE00CA6849 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2786514291826CE00CA6849 /* ListView.swift */; };
 		E2786517291826CF00CA6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786516291826CF00CA6849 /* Assets.xcassets */; };
@@ -21,11 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E2162EE5291C4C870097E55D /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		E22DBBF02942628F00E38AE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2607D792922EF4E0032DE45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E2650E4C291D95D3007D365D /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		E2650E50291D9A73007D365D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E2650E52291DBB95007D365D /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		E26B658D29410E7D008F8C7A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		E26B6594294115AA008F8C7A /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		E278650F291826CE00CA6849 /* SMB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2786512291826CE00CA6849 /* SMBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBApp.swift; sourceTree = "<group>"; };
 		E2786514291826CE00CA6849 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -39,7 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26B659C294118F6008F8C7A /* FirebaseDatabaseSwift in Frameworks */,
+				E26B659A294118F6008F8C7A /* FirebaseDatabase in Frameworks */,
 				E2650E49291C4DAB007D365D /* SQLite in Frameworks */,
+				E26B659129411563008F8C7A /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,10 +59,8 @@
 		E2650E4E291D9A1E007D365D /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				E2650E52291DBB95007D365D /* AddProductView.swift */,
 				E2650E4C291D95D3007D365D /* ProductService.swift */,
 				E27865222918295600CA6849 /* Product.swift */,
-				E2162EE5291C4C870097E55D /* ProductStore.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -60,11 +68,19 @@
 		E2650E4F291D9A49007D365D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E2786514291826CE00CA6849 /* ListView.swift */,
 				E2650E50291D9A73007D365D /* HomeView.swift */,
 				E2607D792922EF4E0032DE45 /* SettingsView.swift */,
+				E2786514291826CE00CA6849 /* ListView.swift */,
+				E2650E52291DBB95007D365D /* AddProductView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E26B6598294118F6008F8C7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E2786506291826CE00CA6849 = {
@@ -72,6 +88,7 @@
 			children = (
 				E2786511291826CE00CA6849 /* SMB */,
 				E2786510291826CE00CA6849 /* Products */,
+				E26B6598294118F6008F8C7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,10 +103,12 @@
 		E2786511291826CE00CA6849 /* SMB */ = {
 			isa = PBXGroup;
 			children = (
+				E2786512291826CE00CA6849 /* SMBApp.swift */,
+				E2F1EC172947D04C0007BC70 /* Auth */,
 				E2650E4F291D9A49007D365D /* View */,
 				E2650E4E291D9A1E007D365D /* Product */,
-				E2786512291826CE00CA6849 /* SMBApp.swift */,
 				E2786516291826CF00CA6849 /* Assets.xcassets */,
+				E22DBBF02942628F00E38AE1 /* GoogleService-Info.plist */,
 				E2786518291826CF00CA6849 /* Preview Content */,
 			);
 			path = SMB;
@@ -101,6 +120,15 @@
 				E2786519291826CF00CA6849 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E2F1EC172947D04C0007BC70 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				E26B658D29410E7D008F8C7A /* AuthService.swift */,
+				E26B6594294115AA008F8C7A /* AuthView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +149,9 @@
 			name = SMB;
 			packageProductDependencies = (
 				E2650E48291C4DAB007D365D /* SQLite */,
+				E26B659029411563008F8C7A /* FirebaseAuth */,
+				E26B6599294118F6008F8C7A /* FirebaseDatabase */,
+				E26B659B294118F6008F8C7A /* FirebaseDatabaseSwift */,
 			);
 			productName = SMB;
 			productReference = E278650F291826CE00CA6849 /* SMB.app */;
@@ -152,6 +183,7 @@
 			mainGroup = E2786506291826CE00CA6849;
 			packageReferences = (
 				E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E2786510291826CE00CA6849 /* Products */;
 			projectDirPath = "";
@@ -169,6 +201,7 @@
 			files = (
 				E278651A291826CF00CA6849 /* Preview Assets.xcassets in Resources */,
 				E2786517291826CF00CA6849 /* Assets.xcassets in Resources */,
+				E22DBBF12942628F00E38AE1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,11 +215,12 @@
 				E2786515291826CE00CA6849 /* ListView.swift in Sources */,
 				E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */,
 				E2650E4D291D95D3007D365D /* ProductService.swift in Sources */,
+				E26B658E29410E7D008F8C7A /* AuthService.swift in Sources */,
 				E2650E53291DBB95007D365D /* AddProductView.swift in Sources */,
 				E2786513291826CE00CA6849 /* SMBApp.swift in Sources */,
+				E26B6595294115AA008F8C7A /* AuthView.swift in Sources */,
 				E2650E51291D9A73007D365D /* HomeView.swift in Sources */,
 				E27865232918295600CA6849 /* Product.swift in Sources */,
-				E2162EE6291C4C870097E55D /* ProductStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +429,14 @@
 				minimumVersion = 0.14.1;
 			};
 		};
+		E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -402,6 +444,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
+		};
+		E26B659029411563008F8C7A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E26B6599294118F6008F8C7A /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E26B659B294118F6008F8C7A /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
