@@ -77,7 +77,7 @@ class ProductService: ObservableObject {
         //let objectRef = ref.child(String(productId))
         //TODO: delete product
         
-        objectRef.remove
+        //objectRef.remove
     }
     
     func insert(product: ProductModel) {
