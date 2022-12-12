@@ -74,7 +74,7 @@ class ProductService: ObservableObject {
 //                getAll()
 //            }
 //        }
-        let objectRef = ref.child(String(productId))
+        //let objectRef = ref.child(String(productId))
         //TODO: delete product
         
         objectRef.remove
