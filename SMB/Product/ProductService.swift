@@ -38,15 +38,6 @@ class ProductService: ObservableObject {
                         self.productList.append(product)
                     }
                 }
-                
-//                guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
-//                    print("Cannot fetch products")
-//                    return
-//                }
-//
-//                self.productList = children.compactMap({snapchot in
-//                    return try? snapchot.data(as: ProductModel.self)
-//                })
             }
     }
     
@@ -66,18 +57,12 @@ class ProductService: ObservableObject {
             }
     }
     
-    func deleteById(at productId: IndexSet) {
-//        let id = indexSet.map { self.productsList[$0].id}.first
-//        if let id = id {
-//            let isDeleted = ProductStore.shared.delete(id: id)
-//            if isDeleted {
-//                getAll()
-//            }
-//        }
-        //let objectRef = ref.child(String(productId))
-        //TODO: delete product
-        
-        //objectRef.remove
+    func deleteById(at indexSet: IndexSet) {
+        let id = indexSet.map { self.productList[$0].id}.first
+        if let id = id {
+            let objectRef = ref.child(id)
+            objectRef.removeValue()
+        }
     }
     
     func insert(product: ProductModel) {
@@ -85,7 +70,6 @@ class ProductService: ObservableObject {
         let objectRef = ref.childByAutoId()
         productWithId.id = objectRef.key!
         objectRef.setValue(productWithId.toDictionary)
-        
     }
     
     func updateById(updatedProduct: ProductModel) {
