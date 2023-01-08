@@ -52,6 +52,7 @@ struct ListView: View {
     var editButton: some View {
         Button {
             if (editMode?.wrappedValue.isEditing == true) {
+                productService.updateAll()
                 editMode?.wrappedValue = .inactive
             } else {
                 editMode?.wrappedValue = .active

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22E12A72949282500886B0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E22E12A62949282500886B0C /* GoogleService-Info.plist */; };
 		E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2607D792922EF4E0032DE45 /* SettingsView.swift */; };
-		E2650E49291C4DAB007D365D /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = E2650E48291C4DAB007D365D /* SQLite */; };
 		E2650E4D291D95D3007D365D /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E4C291D95D3007D365D /* ProductService.swift */; };
 		E2650E51291D9A73007D365D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E50291D9A73007D365D /* HomeView.swift */; };
 		E2650E53291DBB95007D365D /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E52291DBB95007D365D /* AddProductView.swift */; };
@@ -22,10 +22,10 @@
 		E2786517291826CF00CA6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786516291826CF00CA6849 /* Assets.xcassets */; };
 		E278651A291826CF00CA6849 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786519291826CF00CA6849 /* Preview Assets.xcassets */; };
 		E27865232918295600CA6849 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27865222918295600CA6849 /* Product.swift */; };
-		E2F1EC1B2947D7770007BC70 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2F1EC1A2947D7770007BC70 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E22E12A62949282500886B0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2607D792922EF4E0032DE45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E2650E4C291D95D3007D365D /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		E2650E50291D9A73007D365D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -38,7 +38,6 @@
 		E2786516291826CF00CA6849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2786519291826CF00CA6849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E27865222918295600CA6849 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		E2F1EC1A2947D7770007BC70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +47,6 @@
 			files = (
 				E26B659C294118F6008F8C7A /* FirebaseDatabaseSwift in Frameworks */,
 				E26B659A294118F6008F8C7A /* FirebaseDatabase in Frameworks */,
-				E2650E49291C4DAB007D365D /* SQLite in Frameworks */,
 				E26B659129411563008F8C7A /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,7 +101,7 @@
 		E2786511291826CE00CA6849 /* SMB */ = {
 			isa = PBXGroup;
 			children = (
-				E2F1EC1A2947D7770007BC70 /* GoogleService-Info.plist */,
+				E22E12A62949282500886B0C /* GoogleService-Info.plist */,
 				E2786512291826CE00CA6849 /* SMBApp.swift */,
 				E2F1EC172947D04C0007BC70 /* Auth */,
 				E2650E4F291D9A49007D365D /* View */,
@@ -148,7 +146,6 @@
 			);
 			name = SMB;
 			packageProductDependencies = (
-				E2650E48291C4DAB007D365D /* SQLite */,
 				E26B659029411563008F8C7A /* FirebaseAuth */,
 				E26B6599294118F6008F8C7A /* FirebaseDatabase */,
 				E26B659B294118F6008F8C7A /* FirebaseDatabaseSwift */,
@@ -201,7 +198,7 @@
 			files = (
 				E278651A291826CF00CA6849 /* Preview Assets.xcassets in Resources */,
 				E2786517291826CF00CA6849 /* Assets.xcassets in Resources */,
-				E2F1EC1B2947D7770007BC70 /* GoogleService-Info.plist in Resources */,
+				E22E12A72949282500886B0C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +437,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E2650E48291C4DAB007D365D /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2650E47291C4DAB007D365D /* XCRemoteSwiftPackageReference "SQLite.swift" */;
-			productName = SQLite;
-		};
 		E26B659029411563008F8C7A /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E26B658F29411563008F8C7A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
