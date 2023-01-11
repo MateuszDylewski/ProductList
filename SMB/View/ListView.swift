@@ -21,10 +21,15 @@ struct ListView: View {
     var body: some View {
         VStack {
             List {
-                ForEach($productService.productList, id: \.id) { product in
+                ForEach($productService.privateProductList, id: \.id) { product in
                     ProductRow(product: product, productService: productService)
                 }
-                .onDelete(perform: productService.deleteById(at:))
+                .onDelete(perform: productService.deletePrivateProductById(at:))
+                
+                ForEach($productService.publicProductList, id: \.id) { product in
+                    ProductRow(product: product, productService: productService)
+                }
+                .onDelete(perform: productService.deletePublicProductById(at:))
             }
             .listStyle(.plain)
             .font(.system(size:20))

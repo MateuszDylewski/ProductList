@@ -10,74 +10,104 @@ import Firebase
 import FirebaseDatabase
 import FirebaseDatabaseSwift
 
-class ProductService: ObservableObject {
+class ProductService: ObservableObject {    
     @Published
-    var productList = [ProductModel]()
+    var publicProductList = [ProductModel]()
+    
+    @Published
+    var privateProductList = [ProductModel]()
     
     private let ref = Database.database().reference()
     private let currentUserId = Auth.auth().currentUser!.uid
     
     func getProducts(_ privateSwitch: Bool) {
-        if (privateSwitch) {
-            readPrivateProducts()
-        } else {
-            readAllProducts()
+        self.publicProductList = [ProductModel]()
+        self.privateProductList = [ProductModel]()
+        readPrivateProducts()
+        if !privateSwitch {
+            readPublicProducts()
         }
     }
     
-    func readAllProducts() {
-        ref.observe(.value) { parentSnapshot in
-                guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
-                    print("Cannot fetch products")
-                    return
-                }
-                self.productList = [ProductModel]()
-                for rawProduct in children {
-                    let product : ProductModel = try! rawProduct.data(as: ProductModel.self)
-                    if (product.userOwnerId == "" || product.userOwnerId == self.currentUserId) {
-                        self.productList.append(product)
-                    }
-                }
+    func readPublicProducts() {
+        ref.child("products").observe(.value) { parentSnapshot  in
+            guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
+                print("Cannot fetch public products")
+                return
             }
+            self.publicProductList = [ProductModel]()
+            for rawProduct in children {
+                let product : ProductModel = try! rawProduct.data(as: ProductModel.self)
+                self.publicProductList.append(product)
+            }
+        }
     }
     
     func readPrivateProducts() {
-        ref.observe(.value) { parentSnapshot in
-                guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
-                    print("Cannot fetch products")
-                    return
-                }
-                self.productList = [ProductModel]()
-                for rawProduct in children {
-                    let product : ProductModel = try! rawProduct.data(as: ProductModel.self)
-                    if (product.userOwnerId == self.currentUserId) {
-                        self.productList.append(product)
-                    }
-                }
+        ref.child("users").child(currentUserId).observe(.value) { parentSnapshot in
+            guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
+                print("Cannot fetch private products")
+                return
             }
+            self.privateProductList = [ProductModel]()
+            for rawProduct in children {
+                let product : ProductModel = try! rawProduct.data(as: ProductModel.self)
+                self.privateProductList.append(product)
+            }
+        }
     }
     
-    func deleteById(at indexSet: IndexSet) {
-        let id = indexSet.map { self.productList[$0].id}.first
-        if let id = id {
-            let objectRef = ref.child(id)
+    func deletePublicProductById(at indexSet: IndexSet) {
+        let productIdToDelete = indexSet.map {
+            self.publicProductList[$0].id
+        }.first
+        
+        if let productIdToDelete = productIdToDelete {
+            let objectRef = ref.child("products").child(productIdToDelete)
+            objectRef.removeValue()
+        }
+    }
+    
+    func deletePrivateProductById(at indexSet: IndexSet) {
+        let productIdToDelete = indexSet.map {
+            self.privateProductList[$0].id
+        }.first
+        
+        if let productIdToDelete = productIdToDelete {
+            let objectRef = ref.child("users").child(currentUserId).child(productIdToDelete)
             objectRef.removeValue()
         }
     }
     
     func insert(product: ProductModel) {
         var productWithId = product
-        let objectRef = ref.childByAutoId()
+        let objectRef: DatabaseReference
+        
+        if product.isPrivate {
+            objectRef = ref.child("users").child(currentUserId).childByAutoId()
+        } else {
+            objectRef = ref.child("products").childByAutoId()
+        }
         productWithId.id = objectRef.key!
         objectRef.setValue(productWithId.toDictionary)
     }
     
     func updateById(updatedProduct: ProductModel) {
-        ref.updateChildValues([updatedProduct.id : updatedProduct.toDictionary!])
+        if updatedProduct.isPrivate {
+            ref.child("users")
+                .child(currentUserId)
+                .updateChildValues([updatedProduct.id : updatedProduct.toDictionary!])
+        } else {
+            ref.child("products")
+                .updateChildValues([updatedProduct.id : updatedProduct.toDictionary!])
+        }
     }
     
     func updateAll() {
-        for product in productList {
+        for product in privateProductList {
+            updateById(updatedProduct: product)
+        }
+        for product in publicProductList {
             updateById(updatedProduct: product)
         }
     }
