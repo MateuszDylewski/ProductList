@@ -12,5 +12,7 @@ Using UserDefaults, application provides ability to:
 
 # SMB mini project 3 - end result in branch Firebase
 SQLite database removed.
+
 Added Firebase realtime database and user authentication.
-Products have now new attribute userOwnerId that indicates who created the product. If null, the product is public.
+
+Product has now a type. It's either public or private.
