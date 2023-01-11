@@ -12,8 +12,8 @@ struct ProductModel : Identifiable, Encodable, Decodable {
     var name: String
     var price: Double
     var quantity: Int64
-    var ifBought: Bool
-    var userOwnerId: String
+    var isBought: Bool
+    var isPrivate: Bool
 }
 
 extension Encodable {
@@ -64,10 +64,10 @@ struct ProductRow: View {
                         .padding(.trailing, 10)
                 }
                 
-                Image(systemName: product.ifBought ? "checkmark.circle" : "circle")
-                .foregroundColor(product.ifBought ? .green : .accentColor)
+                Image(systemName: product.isBought ? "checkmark.circle" : "circle")
+                .foregroundColor(product.isBought ? .green : .accentColor)
                 .onTapGesture {
-                    product.ifBought.toggle()
+                    product.isBought.toggle()
                     productService.updateById(updatedProduct: product)
                 }
             }

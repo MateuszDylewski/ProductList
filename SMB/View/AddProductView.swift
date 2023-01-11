@@ -57,8 +57,8 @@ struct AddProductView: View {
                     name: self.name,
                     price: self.price,
                     quantity: self.quantity,
-                    ifBought: false,
-                    userOwnerId: isPrivate ? Auth.auth().currentUser!.uid : ""
+                    isBought: false,
+                    isPrivate: isPrivate
                 ))
                 self.presentationMode.wrappedValue.dismiss()
             } label: {
