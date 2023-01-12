@@ -20,11 +20,11 @@ struct HomeView: View {
                     NavigationLink(destination: ListView(productService: ProductService()), label: {
                         NaviagtionButton(label: "List", image: "checklist", color: .blue)
                     })
-                    NavigationLink(destination: SettingsView(), label: {
-                        NaviagtionButton(label: "Settings", image: "gear", color: .green)
+                    NavigationLink(destination: MapView(), label: {
+                        NaviagtionButton(label: "Map", image: "map", color: .green)
                     })
-                    NavigationLink(destination: Text("Not ready yet"), label: {
-                        NaviagtionButton(label: "Not ready yet", image: "exclamationmark.octagon.fill", color: .gray)
+                    NavigationLink(destination: SettingsView(), label: {
+                        NaviagtionButton(label: "Settings", image: "gear", color: .gray)
                     })
                 }
             }.navigationTitle("Home")

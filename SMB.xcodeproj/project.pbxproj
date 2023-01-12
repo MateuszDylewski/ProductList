@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22AD2F0296F40DD00BB43DC /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AD2EF296F40DD00BB43DC /* MapView.swift */; };
+		E22AD2F2296F4CD500BB43DC /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AD2F1296F4CD500BB43DC /* LocationService.swift */; };
+		E22AD2F5296F72CE00BB43DC /* ShopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AD2F4296F72CE00BB43DC /* ShopService.swift */; };
+		E22AD2F7296F739B00BB43DC /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22AD2F6296F739B00BB43DC /* Shop.swift */; };
 		E22E12A72949282500886B0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E22E12A62949282500886B0C /* GoogleService-Info.plist */; };
 		E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2607D792922EF4E0032DE45 /* SettingsView.swift */; };
 		E2650E4D291D95D3007D365D /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2650E4C291D95D3007D365D /* ProductService.swift */; };
@@ -22,9 +26,15 @@
 		E2786517291826CF00CA6849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786516291826CF00CA6849 /* Assets.xcassets */; };
 		E278651A291826CF00CA6849 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2786519291826CF00CA6849 /* Preview Assets.xcassets */; };
 		E27865232918295600CA6849 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27865222918295600CA6849 /* Product.swift */; };
+		E2EFE2CC29708CE900F4698A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EFE2CB29708CE900F4698A /* NotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E22AD2EF296F40DD00BB43DC /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E22AD2F1296F4CD500BB43DC /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		E22AD2F3296F508900BB43DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E22AD2F4296F72CE00BB43DC /* ShopService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopService.swift; sourceTree = "<group>"; };
+		E22AD2F6296F739B00BB43DC /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		E22E12A62949282500886B0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2607D792922EF4E0032DE45 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		E2650E4C291D95D3007D365D /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
@@ -38,6 +48,9 @@
 		E2786516291826CF00CA6849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2786519291826CF00CA6849 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E27865222918295600CA6849 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2EFE2CB29708CE900F4698A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		E2EFE2CD2970954E00F4698A /* Lidl.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Lidl.gpx; sourceTree = "<group>"; };
+		E2EFE2CE297096D300F4698A /* Centrum.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Centrum.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,18 +67,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E2650E4E291D9A1E007D365D /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				E2650E4C291D95D3007D365D /* ProductService.swift */,
-				E27865222918295600CA6849 /* Product.swift */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
 		E2650E4F291D9A49007D365D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E26B6594294115AA008F8C7A /* AuthView.swift */,
+				E22AD2EF296F40DD00BB43DC /* MapView.swift */,
 				E2650E50291D9A73007D365D /* HomeView.swift */,
 				E2607D792922EF4E0032DE45 /* SettingsView.swift */,
 				E2786514291826CE00CA6849 /* ListView.swift */,
@@ -84,6 +90,8 @@
 		E2786506291826CE00CA6849 = {
 			isa = PBXGroup;
 			children = (
+				E2EFE2CE297096D300F4698A /* Centrum.gpx */,
+				E2EFE2CD2970954E00F4698A /* Lidl.gpx */,
 				E2786511291826CE00CA6849 /* SMB */,
 				E2786510291826CE00CA6849 /* Products */,
 				E26B6598294118F6008F8C7A /* Frameworks */,
@@ -101,12 +109,13 @@
 		E2786511291826CE00CA6849 /* SMB */ = {
 			isa = PBXGroup;
 			children = (
-				E22E12A62949282500886B0C /* GoogleService-Info.plist */,
-				E2786512291826CE00CA6849 /* SMBApp.swift */,
-				E2F1EC172947D04C0007BC70 /* Auth */,
+				E290409E2970C2A4002D0FD6 /* Services */,
+				E290409D2970C276002D0FD6 /* Models */,
 				E2650E4F291D9A49007D365D /* View */,
-				E2650E4E291D9A1E007D365D /* Product */,
+				E2786512291826CE00CA6849 /* SMBApp.swift */,
 				E2786516291826CF00CA6849 /* Assets.xcassets */,
+				E22AD2F3296F508900BB43DC /* Info.plist */,
+				E22E12A62949282500886B0C /* GoogleService-Info.plist */,
 				E2786518291826CF00CA6849 /* Preview Content */,
 			);
 			path = SMB;
@@ -120,13 +129,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E2F1EC172947D04C0007BC70 /* Auth */ = {
+		E290409D2970C276002D0FD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E22AD2F6296F739B00BB43DC /* Shop.swift */,
+				E27865222918295600CA6849 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E290409E2970C2A4002D0FD6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				E26B658D29410E7D008F8C7A /* AuthService.swift */,
-				E26B6594294115AA008F8C7A /* AuthView.swift */,
+				E22AD2F4296F72CE00BB43DC /* ShopService.swift */,
+				E2650E4C291D95D3007D365D /* ProductService.swift */,
+				E22AD2F1296F4CD500BB43DC /* LocationService.swift */,
+				E2EFE2CB29708CE900F4698A /* NotificationService.swift */,
 			);
-			path = Auth;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,13 +232,18 @@
 			files = (
 				E2786515291826CE00CA6849 /* ListView.swift in Sources */,
 				E2607D7A2922EF4E0032DE45 /* SettingsView.swift in Sources */,
+				E2EFE2CC29708CE900F4698A /* NotificationService.swift in Sources */,
 				E2650E4D291D95D3007D365D /* ProductService.swift in Sources */,
 				E26B658E29410E7D008F8C7A /* AuthService.swift in Sources */,
 				E2650E53291DBB95007D365D /* AddProductView.swift in Sources */,
 				E2786513291826CE00CA6849 /* SMBApp.swift in Sources */,
+				E22AD2F2296F4CD500BB43DC /* LocationService.swift in Sources */,
 				E26B6595294115AA008F8C7A /* AuthView.swift in Sources */,
+				E22AD2F7296F739B00BB43DC /* Shop.swift in Sources */,
+				E22AD2F0296F40DD00BB43DC /* MapView.swift in Sources */,
 				E2650E51291D9A73007D365D /* HomeView.swift in Sources */,
 				E27865232918295600CA6849 /* Product.swift in Sources */,
+				E22AD2F5296F72CE00BB43DC /* ShopService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +375,9 @@
 				DEVELOPMENT_TEAM = LCZW4VXZ8J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SMB/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = QWEQWEQ;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = QWEQWE;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -377,6 +406,9 @@
 				DEVELOPMENT_TEAM = LCZW4VXZ8J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SMB/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = QWEQWEQ;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = QWEQWE;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

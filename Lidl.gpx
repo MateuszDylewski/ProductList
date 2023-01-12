@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+<!--    <wpt lat="52.175583" lon="20.989969">-->
+<!--      <name>Dom</name>-->
+<!--      <time>2023-01-12T14:00:00Z</time>-->
+<!--    </wpt>-->
+    
+    <wpt lat="52.1756591796875" lon="20.989957538385053">
+      <name>Lidl</name>
+      <time>2023-01-12T14:00:10Z</time>
+    </wpt>
+    
+</gpx>

@@ -44,7 +44,7 @@ class ProductService: ObservableObject {
     }
     
     func readPrivateProducts() {
-        ref.child("users").child(currentUserId).observe(.value) { parentSnapshot in
+        ref.child("users").child(currentUserId).child("products").observe(.value) { parentSnapshot in
             guard let children = parentSnapshot.children.allObjects as? [DataSnapshot] else {
                 print("Cannot fetch private products")
                 return
@@ -74,7 +74,7 @@ class ProductService: ObservableObject {
         }.first
         
         if let productIdToDelete = productIdToDelete {
-            let objectRef = ref.child("users").child(currentUserId).child(productIdToDelete)
+            let objectRef = ref.child("users").child(currentUserId).child("products").child(productIdToDelete)
             objectRef.removeValue()
         }
     }
@@ -84,7 +84,7 @@ class ProductService: ObservableObject {
         let objectRef: DatabaseReference
         
         if product.isPrivate {
-            objectRef = ref.child("users").child(currentUserId).childByAutoId()
+            objectRef = ref.child("users").child(currentUserId).child("products").childByAutoId()
         } else {
             objectRef = ref.child("products").childByAutoId()
         }
@@ -96,6 +96,7 @@ class ProductService: ObservableObject {
         if updatedProduct.isPrivate {
             ref.child("users")
                 .child(currentUserId)
+                .child("products")
                 .updateChildValues([updatedProduct.id : updatedProduct.toDictionary!])
         } else {
             ref.child("products")
