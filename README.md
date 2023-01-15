@@ -16,3 +16,15 @@ SQLite database removed.
 Added Firebase realtime database and user authentication.
 
 Product has now a type. It's either public or private.
+
+
+# SMB mini project 4 - end result in branch MapModule
+Added new module called Map.
+
+Map stores information about favourite shops and shows thei location.
+
+Shops are added based on user's current location.
+
+Module require notification and location permissions.
+
+Each time user enters or exits shop's location (+/- range) a notification is sent.
