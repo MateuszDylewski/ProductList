@@ -13,6 +13,8 @@ import MapKit
 
 class ShopService: ObservableObject {
     
+    var notificationService = NotificationService()
+    
     @Published
     var shopList = [ShopModel]()
     
@@ -44,19 +46,27 @@ class ShopService: ObservableObject {
         if let shopIdToDelete = shopIdToDelete {
             let objectRef = ref.child(shopIdToDelete)
             objectRef.removeValue()
+            notificationService.removeNotifications(shopId: shopIdToDelete)
         }
     }
     
-    func insert(_ shop: ShopModel) -> ShopModel {
+    func insert(_ shop: ShopModel) {
         var shopWithId = shop
         let objectRef = ref.childByAutoId()
         shopWithId.id = objectRef.key!
         objectRef.setValue(shopWithId.toDictionary)
-        return shopWithId
+        
+        notificationService.registerNotifications(shop: shopWithId)
+        notificationService.notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
+            for request in requests {
+                print(request)
+            }
+        })
     }
     
     func updateById(_ updatedShop: ShopModel) {
         ref.updateChildValues([updatedShop.id : updatedShop.toDictionary!])
+        notificationService.registerNotifications(shop: updatedShop)
     }
     
     func updateAll() {

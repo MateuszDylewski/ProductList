@@ -23,17 +23,23 @@ class NotificationService: ObservableObject {
     }
     
     func registerNotifications(shop: ShopModel) {
+        removeNotifications(shop: shop)
+        registerEntryNotifi(shop: shop)
+        registerExitNotifi(shop: shop)
+    }
+    
+    func removeNotifications(shop: ShopModel) {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [
             shop.id + "entry",
             shop.id + "exit"
         ])
-        registerEntryNotifi(shop: shop)
-        registerExitNotifi(shop: shop)
-        notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
-            for request in requests {
-                print(request)
-            }
-        })
+    }
+    
+    func removeNotifications(shopId: String) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [
+            shopId + "entry",
+            shopId + "exit"
+        ])
     }
     
     private func registerEntryNotifi(shop: ShopModel) {

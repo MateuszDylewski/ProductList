@@ -57,10 +57,7 @@ struct ShopAdd: View {
         newShop.longitude = locationService.locationManager?
             .location!.coordinate.longitude ?? 0
         showPopover.toggle()
-        let createdShop = shopService.insert(newShop)
-        
-        let notificationService = NotificationService()
-        notificationService.registerNotifications(shop: createdShop)
+        shopService.insert(newShop)
     }
     
     let amountFormatter: NumberFormatter = {
