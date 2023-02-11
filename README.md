@@ -25,6 +25,7 @@ Added Firebase realtime database and user authentication.
 Product has now a type. It's either public or private.
 
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 50 05](https://user-images.githubusercontent.com/49963924/218228239-544ee087-7d33-446a-ba68-a5dedae6fea7.png)
+![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 41 58](https://user-images.githubusercontent.com/49963924/218228372-f5c82516-b5a5-4c8b-85e7-7d2d5ed27c66.png)
 
 
 # SMB mini project 4 - end result in branch MapModule
