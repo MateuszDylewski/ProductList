@@ -14,9 +14,9 @@ Using UserDefaults, application provides ability to:
 SQLite database removed.
 
 Added Firebase realtime database and user authentication.
-![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 41 38](https://user-images.githubusercontent.com/49963924/218227890-43f81fb0-65cb-427e-8227-d1c319f59be4.png)
 
 Product has now a type. It's either public or private.
+![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 50 05](https://user-images.githubusercontent.com/49963924/218228018-521b8fab-1678-49eb-adcb-36da8e0ce962.png)
 
 
 # SMB mini project 4 - end result in branch MapModule
