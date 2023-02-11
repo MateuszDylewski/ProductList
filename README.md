@@ -14,6 +14,7 @@ Using UserDefaults, application provides ability to:
 SQLite database removed.
 
 Added Firebase realtime database and user authentication.
+![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 41 38](https://user-images.githubusercontent.com/49963924/218227772-b7f0255b-c507-4158-a7b3-d73fe2a973e4.png)
 
 Product has now a type. It's either public or private.
 
