@@ -37,5 +37,6 @@ Shops are added based on user's current location.
 Module require notification and location permissions.
 
 Each time user enters or exits shop's location (+/- range) a notification is sent.
+
 ![Simulator Screen Shot - iPhone 14 Pro - 2023-02-11 at 01 45 36](https://user-images.githubusercontent.com/49963924/218228316-9fc13b62-9492-490f-8def-a9798e2dfbae.png)
 
